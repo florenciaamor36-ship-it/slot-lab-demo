@@ -4,6 +4,7 @@ import { SlotEngine, SlotSpinResult } from './engines/SlotEngine';
 import { games } from './games';
 import './style.css';
 
+const ASSET_BASE = `${import.meta.env.BASE_URL}assets/slots/cleopatra`;
 const CLEOPATRA_SYMBOLS: Record<string, string> = {
   s0: 'cleopatra-wild', s1: 'eye-of-horus', s2: 'ankh', s3: 'scarab',
   s4: 'coin', s5: 'lotus', wild: 'cleopatra-wild', scatter: 'bonus'
@@ -37,7 +38,7 @@ function CleopatraOverlay({ result, onClose }: { result: SlotSpinResult; onClose
   return <div className="big-win-overlay" role="dialog" aria-modal="true" aria-label="Premio grande demo">
     <div className="big-win-card">
       <button className="overlay-close" onClick={onClose} aria-label="Cerrar premio">×</button>
-      <img src="/assets/slots/cleopatra/overlays/golden-jackpot.jpg" alt="Cleopatra Golden Jackpot" />
+      <img src={`${ASSET_BASE}/overlays/golden-jackpot.jpg`} alt="Cleopatra Golden Jackpot" />
       <strong>{result.totalPayout.toLocaleString('es-AR')} fichas</strong>
       <span>PREMIO DEMO · FICHAS VIRTUALES</span>
     </div>
@@ -60,12 +61,12 @@ function App() {
     <main><aside><h2>Máquinas</h2>{games.map((g, i) => <button className={i === selected ? 'active' : ''} onClick={() => { setSelected(i); setResult(null); setShowBigWin(false); }} key={g.id}>{g.title}<small>{g.subtitle}</small></button>)}</aside>
       <section>
         <div className="hero"><div className="sparkles">✦ ✧ ✦</div><p>{game.subtitle}</p><h1>{game.title}</h1><span>Motor común SlotEngine · Demo {selected + 1}/20</span></div>
-        {isCleopatra && <div className="cleopatra-machine" style={{ backgroundImage: 'url(/assets/slots/cleopatra/frames/cabinet-bg.jpg)' }}>
-          <img className="cleopatra-logo" src="/assets/slots/cleopatra/frames/cleopatra-logo.jpg" alt="Cleopatra" />
+        {isCleopatra && <div className="cleopatra-machine" style={{ backgroundImage: `url(${ASSET_BASE}/frames/cabinet-bg.jpg)` }}>
+          <img className="cleopatra-logo" src={`${ASSET_BASE}/frames/cleopatra-logo.jpg`} alt="Cleopatra" />
           <div className={`grid cleopatra-grid ${spinning ? 'spinning' : ''} ${result?.isWin ? 'winner' : ''}`}>
-            {(grid.length ? grid.flat() : Array.from({ length: 15 }, () => null)).map((s, i) => <div className="cell" key={i}>{s ? <><img src={`/assets/slots/cleopatra/symbols/${CLEOPATRA_SYMBOLS[s.id] ?? 'coin'}.png`} alt={s.label} /><small>{s.label}</small></> : '❔'}</div>)}
+            {(grid.length ? grid.flat() : Array.from({ length: 15 }, () => null)).map((s, i) => <div className="cell" key={i}>{s ? <><img src={`${ASSET_BASE}/symbols/${CLEOPATRA_SYMBOLS[s.id] ?? 'coin'}.png`} alt={s.label} /><small>{s.label}</small></> : '❔'}</div>)}
           </div>
-          <img className="control-art" src="/assets/slots/cleopatra/frames/control-panel.jpg" alt="Panel de control Cleopatra" />
+          <img className="control-art" src={`${ASSET_BASE}/frames/control-panel.jpg`} alt="Panel de control Cleopatra" />
           <button className="hotspot hotspot-spin" onClick={spin} disabled={spinning}>{spinning ? 'GIRANDO…' : 'GIRAR'}</button>
           <button className="hotspot hotspot-minus" onClick={() => setBet((v) => Math.max(10, v - 10))} aria-label="Bajar apuesta">−</button>
           <button className="hotspot hotspot-plus" onClick={() => setBet((v) => Math.min(1000, v + 10))} aria-label="Subir apuesta">+</button>
