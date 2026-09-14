@@ -1,2 +1,628 @@
-*{box-sizing:border-box}body{margin:0;background:#050912;color:#e5e7eb;font-family:system-ui,sans-serif}.app{min-height:100vh;background:radial-gradient(circle at 70% 20%,#172554 0,#050912 55%)}header{padding:18px 5%;border-bottom:1px solid #263b60;background:#0b1426;display:flex;justify-content:space-between;gap:20px;box-shadow:0 0 25px #000}header span,small,.note{color:#94a3b8;font-size:12px}main{display:grid;grid-template-columns:260px 1fr;max-width:1400px;margin:auto}aside{padding:22px;border-right:1px solid #1c2d4e}aside h2{font-size:16px}aside button{display:block;width:100%;padding:11px;margin:6px 0;text-align:left;border:1px solid #1c2d4e;background:#0b1426;color:#e5e7eb;border-radius:9px;cursor:pointer;transition:.2s}aside button:hover{transform:translateX(4px);border-color:#facc15}aside button.active{border-color:#facc15;background:#211b08;box-shadow:0 0 12px #facc1533}aside small{display:block;margin-top:3px}.hero{text-align:center;padding:25px;border:1px solid #334155;border-radius:18px;background:linear-gradient(135deg,#111827,#172554);box-shadow:0 12px 35px #0008}.sparkles{color:#facc15;font-size:24px;letter-spacing:20px;animation:pulse 1.4s infinite alternate}h1{margin:8px 0;font-size:32px;color:#fff;text-shadow:0 0 18px #facc1588}section{padding:30px;max-width:1000px;width:100%}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:24px auto;max-width:620px;padding:14px;border:3px solid #facc15;border-radius:16px;background:#0f172a;box-shadow:0 0 28px #facc1533}.cell{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,#172554,#0b1426);border-radius:8px;font-size:34px;box-shadow:inset 0 0 10px #0008;transition:.15s;overflow:hidden}.cell img{width:82%;height:82%;object-fit:contain}.cell small{font-size:9px}.spinning .cell{animation:reel .17s infinite alternate;filter:blur(1px)}.spinning .cell:nth-child(2n){animation-delay:.08s}.winner{animation:glow .65s infinite alternate}.winner .cell{border:1px solid #facc15}.controls{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}.controls input{width:90px;background:#111827;color:white;border:1px solid #475569;padding:10px;border-radius:7px}.spin{padding:13px 28px;background:linear-gradient(#fde68a,#eab308);border:0;border-radius:9px;font-weight:900;cursor:pointer;box-shadow:0 4px 0 #854d0e;transition:.1s}.spin:active{transform:translateY(3px);box-shadow:0 1px 0 #854d0e}.spin:disabled{opacity:.7}.message{text-align:center;margin:20px;padding:16px;border-radius:10px;background:#111e38;min-height:52px}.message.win{color:#fde68a;background:#422006;box-shadow:0 0 20px #facc1544;animation:pulse .6s infinite alternate}.note{text-align:center}.cleopatra-machine{position:relative;width:min(900px,100%);min-height:540px;margin:24px auto;padding:105px 18% 90px;background-size:100% 100%;background-position:center;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px #000b,inset 0 0 30px #eab30844}.cleopatra-logo{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:170px;height:58px;object-fit:cover;border-radius:50%;mix-blend-mode:screen;opacity:.9}.cleopatra-grid{position:relative;z-index:2;width:100%;max-width:none;margin:0;padding:10px;border-color:#b8862c;background:#16100b;gap:5px}.cleopatra-grid .cell{font-size:20px;background:linear-gradient(145deg,#4b2d0c,#120b05);border:1px solid #8a641d}.control-art{position:absolute;z-index:3;bottom:0;left:0;width:100%;height:105px;object-fit:cover;opacity:.95}.hotspot{position:absolute;z-index:5;border:0;border-radius:50%;cursor:pointer;font-weight:900;color:#fff;text-shadow:0 2px 3px #000;background:radial-gradient(circle at 35% 30%,#ffd76a,#9b5c08 70%,#422004);box-shadow:0 0 15px #facc1588,inset 0 0 8px #fff6;padding:0}.hotspot:disabled{filter:grayscale(.7);cursor:wait}.hotspot-spin{bottom:16px;left:50%;transform:translateX(-50%);width:82px;height:48px;font-size:12px}.hotspot-minus,.hotspot-plus{bottom:26px;width:34px;height:34px;font-size:24px}.hotspot-minus{left:24%}.hotspot-plus{right:24%}.big-win-overlay{position:fixed;inset:0;z-index:20;background:#030712dd;display:grid;place-items:center;animation:fadeIn .25s ease-out}.big-win-card{position:relative;width:min(760px,92vw);padding:24px;text-align:center;border:2px solid #facc15;border-radius:20px;background:#190f05;box-shadow:0 0 80px #facc15aa;animation:jackpotIn .55s cubic-bezier(.2,1.5,.4,1)}.big-win-card img{display:block;width:100%;max-height:430px;object-fit:contain;border-radius:12px}.big-win-card strong{display:block;color:#fde68a;font-size:clamp(26px,6vw,58px);margin-top:-20px;text-shadow:0 0 18px #facc15}.big-win-card span{display:block;color:#fef3c7;font-size:12px;margin-top:8px}.overlay-close{position:absolute;right:12px;top:8px;z-index:2;background:#0009;color:#fff;border:1px solid #fff8;border-radius:50%;width:34px;height:34px;font-size:24px;cursor:pointer}@keyframes reel{from{transform:translateY(-5px) rotate(-1deg)}to{transform:translateY(5px) rotate(1deg)}}@keyframes glow{from{box-shadow:0 0 8px #facc15}to{box-shadow:0 0 30px #facc15}}@keyframes pulse{from{opacity:.55;transform:scale(.98)}to{opacity:1;transform:scale(1.04)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes jackpotIn{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}@media(max-width:800px){main{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid #1c2d4e;max-height:220px;overflow:auto}section{padding:16px}.cleopatra-machine{min-height:420px;padding:80px 8% 75px}.control-art{height:80px}.hotspot-minus{left:15%}.hotspot-plus{right:15%}header{flex-direction:column}.cleopatra-logo{width:130px;height:46px}}@media(max-width:600px){body{overflow-x:hidden}header{padding:12px 14px;font-size:13px}header span{font-size:10px}section{padding:10px 6px}.hero{padding:16px 10px;border-radius:12px}.hero h1{font-size:23px}.hero p{margin:4px 0;font-size:13px}.sparkles{font-size:18px;letter-spacing:10px}.cleopatra-machine{width:100%;min-height:350px;margin:14px auto;padding:67px 3.5% 64px;border-radius:12px;background-position:center}.cleopatra-logo{top:8px;width:105px;height:38px}.cleopatra-grid{gap:3px;padding:5px;border-width:2px;border-radius:9px}.cleopatra-grid .cell{border-radius:4px;font-size:11px}.cleopatra-grid .cell img{width:94%;height:94%}.cleopatra-grid .cell small{display:none}.control-art{height:64px}.hotspot-spin{bottom:9px;width:68px;height:38px;font-size:10px}.hotspot-minus,.hotspot-plus{bottom:17px;width:29px;height:29px;font-size:20px}.controls{gap:9px;font-size:13px}.controls input{width:68px;padding:8px}.message{margin:12px 2px;padding:12px;font-size:13px}.note{font-size:10px}.big-win-card{padding:12px}.big-win-card strong{font-size:30px}}
+*{box-sizing:border-box}body{margin:0;background:#050912;color:#e5e7eb;font-family:system-ui,sans-serif}.app{min-height:100vh;background:radial-gradient(circle at 70% 20%,#172554 0,#050912 55%)}
+
+.app.vampire-app {
+  background: radial-gradient(circle at 50% 10%, #4c0519 0, #0f0408 60%, #050204 100%);
+}
+
+header{padding:18px 5%;border-bottom:1px solid #263b60;background:#0b1426;display:flex;justify-content:space-between;gap:20px;box-shadow:0 0 25px #000}header span,small,.note{color:#94a3b8;font-size:12px}main{display:grid;grid-template-columns:260px 1fr;max-width:1400px;margin:auto}aside{padding:22px;border-right:1px solid #1c2d4e}aside h2{font-size:16px}aside button{display:block;width:100%;padding:11px;margin:6px 0;text-align:left;border:1px solid #1c2d4e;background:#0b1426;color:#e5e7eb;border-radius:9px;cursor:pointer;transition:.2s}aside button:hover{transform:translateX(4px);border-color:#facc15}aside button.active{border-color:#facc15;background:#211b08;box-shadow:0 0 12px #facc1533}aside small{display:block;margin-top:3px}
+
+.vampire-nav-btn {
+  border-color: #881337 !important;
+  background: #270611 !important;
+}
+.vampire-nav-btn:hover {
+  border-color: #f43f5e !important;
+  box-shadow: 0 0 12px #f43f5e66 !important;
+}
+.vampire-nav-btn.active {
+  border-color: #f43f5e !important;
+  background: #4c0519 !important;
+  box-shadow: 0 0 15px #f43f5e66 !important;
+}
+
+.hero{text-align:center;padding:25px;border:1px solid #334155;border-radius:18px;background:linear-gradient(135deg,#111827,#172554);box-shadow:0 12px 35px #0008}.sparkles{color:#facc15;font-size:24px;letter-spacing:20px;animation:pulse 1.4s infinite alternate}h1{margin:8px 0;font-size:32px;color:#fff;text-shadow:0 0 18px #facc1588}section{padding:30px;max-width:1000px;width:100%}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:24px auto;max-width:620px;padding:14px;border:3px solid #facc15;border-radius:16px;background:#0f172a;box-shadow:0 0 28px #facc1533}.cell{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,#172554,#0b1426);border-radius:8px;font-size:34px;box-shadow:inset 0 0 10px #0008;transition:.15s;overflow:hidden}.cell img{width:82%;height:82%;object-fit:contain}.cell small{font-size:9px}.spinning .cell{animation:reel .17s infinite alternate;filter:blur(1px)}.spinning .cell:nth-child(2n){animation-delay:.08s}.winner{animation:glow .65s infinite alternate}.winner .cell{border:1px solid #facc15}.controls{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}.controls input{width:90px;background:#111827;color:white;border:1px solid #475569;padding:10px;border-radius:7px}.spin{padding:13px 28px;background:linear-gradient(#fde68a,#eab308);border:0;border-radius:9px;font-weight:900;cursor:pointer;box-shadow:0 4px 0 #854d0e;transition:.1s}.spin:active{transform:translateY(3px);box-shadow:0 1px 0 #854d0e}.spin:disabled{opacity:.7}.message{text-align:center;margin:20px;padding:16px;border-radius:10px;background:#111e38;min-height:52px}.message.win{color:#fde68a;background:#422006;box-shadow:0 0 20px #facc1544;animation:pulse .6s infinite alternate}.note{text-align:center}.cleopatra-machine{position:relative;width:min(900px,100%);min-height:540px;margin:24px auto;padding:105px 18% 90px;background-size:100% 100%;background-position:center;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px #000b,inset 0 0 30px #eab30844}.cleopatra-logo{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:170px;height:58px;object-fit:cover;border-radius:50%;mix-blend-mode:screen;opacity:.9}.cleopatra-grid{position:relative;z-index:2;width:100%;max-width:none;margin:0;padding:10px;border-color:#b8862c;background:#16100b;gap:5px}.cleopatra-grid .cell{font-size:20px;background:linear-gradient(145deg,#4b2d0c,#120b05);border:1px solid #8a641d}.control-art{position:absolute;z-index:3;bottom:0;left:0;width:100%;height:105px;object-fit:cover;opacity:.95}.hotspot{position:absolute;z-index:5;border:0;border-radius:50%;cursor:pointer;font-weight:900;color:#fff;text-shadow:0 2px 3px #000;background:radial-gradient(circle at 35% 30%,#ffd76a,#9b5c08 70%,#422004);box-shadow:0 0 15px #facc1588,inset 0 0 8px #fff6;padding:0}.hotspot:disabled{filter:grayscale(.7);cursor:wait}.hotspot-spin{bottom:16px;left:50%;transform:translateX(-50%);width:82px;height:48px;font-size:12px}.hotspot-minus,.hotspot-plus{bottom:26px;width:34px;height:34px;font-size:24px}.hotspot-minus{left:24%}.hotspot-plus{right:24%}.big-win-overlay{position:fixed;inset:0;z-index:20;background:#030712dd;display:grid;place-items:center;animation:fadeIn .25s ease-out}.big-win-card{position:relative;width:min(760px,92vw);padding:24px;text-align:center;border:2px solid #facc15;border-radius:20px;background:#190f05;box-shadow:0 0 80px #facc15aa;animation:jackpotIn .55s cubic-bezier(.2,1.5,.4,1)}.big-win-card img{display:block;width:100%;max-height:430px;object-fit:contain;border-radius:12px}.big-win-card strong{display:block;color:#fde68a;font-size:clamp(26px,6vw,58px);margin-top:-20px;text-shadow:0 0 18px #facc15}.big-win-card span{display:block;color:#fef3c7;font-size:12px;margin-top:8px}.overlay-close{position:absolute;right:12px;top:8px;z-index:2;background:#0009;color:#fff;border:1px solid #fff8;border-radius:50%;width:34px;height:34px;font-size:24px;cursor:pointer}
+
+/* --- VAMPIRE SLOT CABINET STYLES --- */
+.vampire-slot-container {
+  position: relative;
+  width: min(920px, 100%);
+  margin: 20px auto;
+  border-radius: 18px;
+  background: #120308;
+  border: 3px solid #881337;
+  box-shadow: 0 0 40px #f43f5e33, inset 0 0 30px #000d;
+  overflow: hidden;
+}
+
+.vampire-cabinet-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: linear-gradient(180deg, #4c0519 0%, #1c030a 100%);
+  border-bottom: 2px solid #881337;
+}
+
+.vampire-cabinet-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px #f43f5e);
+}
+
+.vampire-demo-badge {
+  background: #f43f5e22;
+  color: #fb7185;
+  border: 1px solid #f43f5e88;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px #f43f5e;
+}
+
+.vampire-reels-frame {
+  position: relative;
+  padding: 24px 20px 100px;
+  background-size: cover;
+  background-position: center;
+}
+
+.vampire-reels-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  background: #090204ee;
+  border: 3px solid #f43f5e66;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: inset 0 0 35px #000;
+  overflow: hidden;
+  outline: none;
+}
+
+.vampire-reels-container:focus-visible {
+  border-color: #f43f5e;
+  box-shadow: 0 0 20px #f43f5e88, inset 0 0 35px #000;
+}
+
+.vampire-reel-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vampire-reel-spinning {
+  animation: vampireBlurSpin 0.15s infinite linear;
+}
+
+@keyframes vampireBlurSpin {
+  0% { filter: blur(3px); transform: translateY(-8px); }
+  50% { filter: blur(5px); transform: translateY(8px); }
+  100% { filter: blur(3px); transform: translateY(-8px); }
+}
+
+.vampire-cell {
+  aspect-ratio: 1;
+  background: linear-gradient(160deg, #2a0510 0%, #0d0205 100%);
+  border: 1px solid #4c0519;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 0 10px #0009;
+}
+
+.vampire-cell-win {
+  border-color: #f43f5e !important;
+  box-shadow: 0 0 25px #f43f5e, inset 0 0 15px #f43f5e88 !important;
+  animation: vampireWinGlow 0.8s infinite alternate;
+}
+
+@keyframes vampireWinGlow {
+  from { transform: scale(0.97); }
+  to { transform: scale(1.03); filter: brightness(1.2); }
+}
+
+.vampire-symbol-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+}
+
+.vampire-symbol-img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px #000d);
+}
+
+.vampire-symbol-label {
+  font-size: 9px;
+  color: #fda4af;
+  font-weight: 700;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vampire-symbol-placeholder {
+  font-size: 28px;
+  opacity: 0.5;
+}
+
+/* --- VAMPIRE HOTSPOT CONTROL PANEL --- */
+.vampire-control-panel {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  right: 20px;
+  height: 72px;
+  background: linear-gradient(180deg, #2e0411 0%, #0f0206 100%);
+  border: 2px solid #881337;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 12px;
+  box-shadow: 0 10px 30px #000d;
+}
+
+.vampire-hotspot {
+  border: 1px solid #f43f5e66;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #4c0519, #1c030a);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 10px #0008, inset 0 1px 1px #ffffff33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vampire-hotspot:hover:not(:disabled) {
+  border-color: #f43f5e;
+  box-shadow: 0 0 15px #f43f5eaa;
+  transform: translateY(-2px);
+}
+
+.vampire-hotspot:focus-visible {
+  outline: 2px solid #f43f5e;
+  outline-offset: 3px;
+}
+
+.vampire-hotspot:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+}
+
+.vampire-hotspot-minus,
+.vampire-hotspot-plus {
+  width: 42px;
+  height: 42px;
+  font-size: 24px;
+}
+
+.vampire-hotspot-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #090204;
+  border: 1px solid #4c0519;
+  border-radius: 8px;
+  padding: 4px 14px;
+  min-width: 90px;
+}
+
+.vampire-hotspot-display small {
+  font-size: 8px;
+  color: #fda4af;
+  letter-spacing: 1px;
+}
+
+.vampire-hotspot-display span {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.vampire-hotspot-spin {
+  width: 120px;
+  height: 52px;
+  font-size: 16px;
+  background: linear-gradient(145deg, #e11d48, #881337);
+  border-color: #fb7185;
+  box-shadow: 0 0 20px #e11d48aa, inset 0 1px 2px #fff8;
+  letter-spacing: 1px;
+}
+
+.vampire-hotspot-spin:hover:not(:disabled) {
+  background: linear-gradient(145deg, #f43f5e, #9f1239);
+  box-shadow: 0 0 30px #f43f5edd;
+}
+
+.vampire-spin-active {
+  animation: vampireSpinPulse 0.6s infinite alternate;
+}
+
+@keyframes vampireSpinPulse {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.3); }
+}
+
+.vampire-hotspot-auto,
+.vampire-hotspot-info,
+.vampire-hotspot-audio {
+  width: 48px;
+  height: 42px;
+  font-size: 13px;
+}
+
+.vampire-auto-active {
+  background: linear-gradient(145deg, #059669, #064e3b) !important;
+  border-color: #34d399 !important;
+  box-shadow: 0 0 15px #34d39988 !important;
+}
+
+.vampire-audio-muted {
+  filter: grayscale(1);
+  opacity: 0.6;
+}
+
+.vampire-global-balance-bar {
+  text-align: center;
+  margin: 15px 0 5px;
+  font-size: 15px;
+  color: #fb7185;
+  background: #270611;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #881337;
+}
+
+/* --- PAYTABLE MODAL --- */
+.vampire-paytable-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #050204dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.vampire-paytable-content {
+  position: relative;
+  background: #1c030a;
+  border: 2px solid #f43f5e;
+  border-radius: 16px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 24px;
+  box-shadow: 0 0 50px #f43f5e66;
+  color: #e2e8f0;
+}
+
+.vampire-paytable-content h3 {
+  margin: 0 0 4px;
+  color: #fb7185;
+  font-size: 22px;
+  text-align: center;
+}
+
+.vampire-paytable-sub {
+  text-align: center;
+  font-size: 12px;
+  color: #fda4af;
+  margin-bottom: 20px;
+}
+
+.vampire-paytable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.vampire-paytable-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #0d0205;
+  border: 1px solid #4c0519;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.vampire-paytable-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.vampire-paytable-card strong {
+  display: block;
+  font-size: 13px;
+  color: #fff;
+}
+
+.vampire-paytable-card ul {
+  margin: 4px 0 0;
+  padding-left: 16px;
+  font-size: 11px;
+  color: #fda4af;
+}
+
+.vampire-paytable-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: 0;
+  color: #f43f5e;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.vampire-demo-disclaimer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 11px;
+  color: #fb7185;
+  background: #4c0519;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* --- BIG WIN VAMPIRE OVERLAY --- */
+.vampire-big-win-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.vampire-big-win-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #050103ee;
+}
+
+.vampire-big-win-card {
+  position: relative;
+  z-index: 2;
+  width: min(650px, 92vw);
+  background: linear-gradient(180deg, #370414 0%, #0d0105 100%);
+  border: 3px solid #f43f5e;
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 0 90px #f43f5eaa;
+  animation: vampireJackpotScale 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes vampireJackpotScale {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.vampire-overlay-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: #f43f5e33;
+  border: 1px solid #f43f5e;
+  color: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.vampire-jackpot-header {
+  font-size: clamp(20px, 4vw, 32px);
+  font-weight: 900;
+  color: #f43f5e;
+  text-shadow: 0 0 20px #f43f5e;
+  margin-bottom: 15px;
+}
+
+.vampire-jackpot-img-wrapper {
+  max-height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid #881337;
+  margin-bottom: 15px;
+}
+
+.vampire-jackpot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vampire-payout-counter {
+  margin: 10px 0;
+}
+
+.vampire-payout-num {
+  font-size: clamp(36px, 7vw, 64px);
+  font-weight: 900;
+  color: #fb7185;
+  text-shadow: 0 0 25px #f43f5e;
+  display: block;
+}
+
+.vampire-payout-counter small {
+  font-size: 11px;
+  color: #fda4af;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.vampire-multiplier-badge {
+  display: inline-block;
+  background: #f43f5e;
+  color: #fff;
+  font-weight: 900;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 15px #f43f5e;
+}
+
+.vampire-watermark-demo {
+  font-size: 10px;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.vampire-claim-btn {
+  background: linear-gradient(145deg, #f43f5e, #9f1239);
+  color: #fff;
+  border: 0;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #f43f5eaa;
+  transition: transform 0.15s ease;
+}
+
+.vampire-claim-btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes reel{from{transform:translateY(-5px) rotate(-1deg)}to{transform:translateY(5px) rotate(1deg)}}@keyframes glow{from{box-shadow:0 0 8px #facc15}to{box-shadow:0 0 30px #facc15}}@keyframes pulse{from{opacity:.55;transform:scale(.98)}to{opacity:1;transform:scale(1.04)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes jackpotIn{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+
+/* --- RESPONSIVE MOBILE STYLES FOR VAMPIRE SLOT --- */
+@media(max-width:800px){
+  main{grid-template-columns:1fr}
+  aside{border-right:0;border-bottom:1px solid #1c2d4e;max-height:220px;overflow:auto}
+  section{padding:16px}
+  .cleopatra-machine{min-height:420px;padding:80px 8% 75px}
+  .control-art{height:80px}
+  .hotspot-minus{left:15%}
+  .hotspot-plus{right:15%}
+  header{flex-direction:column}
+  .cleopatra-logo{width:130px;height:46px}
+
+  .vampire-reels-frame {
+    padding: 15px 10px 90px;
+  }
+  .vampire-control-panel {
+    height: 64px;
+    padding: 0 6px;
+    bottom: 8px;
+    left: 10px;
+    right: 10px;
+  }
+  .vampire-hotspot-spin {
+    width: 90px;
+    height: 46px;
+    font-size: 13px;
+  }
+  .vampire-hotspot-display {
+    min-width: 65px;
+    padding: 2px 6px;
+  }
+  .vampire-hotspot-display span {
+    font-size: 14px;
+  }
+  .vampire-hotspot-auto,
+  .vampire-hotspot-info,
+  .vampire-hotspot-audio {
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
+  }
+}
+
+@media(max-width:600px){
+  body{overflow-x:hidden}
+  header{padding:12px 14px;font-size:13px}
+  header span{font-size:10px}
+  section{padding:10px 6px}
+  .hero{padding:16px 10px;border-radius:12px}
+  .hero h1{font-size:23px}
+  .hero p{margin:4px 0;font-size:13px}
+  .sparkles{font-size:18px;letter-spacing:10px}
+  .cleopatra-machine{width:100%;min-height:350px;margin:14px auto;padding:67px 3.5% 64px;border-radius:12px;background-position:center}
+  .cleopatra-logo{top:8px;width:105px;height:38px}
+  .cleopatra-grid{gap:3px;padding:5px;border-width:2px;border-radius:9px}
+  .cleopatra-grid .cell{border-radius:4px;font-size:11px}
+  .cleopatra-grid .cell img{width:94%;height:94%}
+  .cleopatra-grid .cell small{display:none}
+  .control-art{height:64px}
+  .hotspot-spin{bottom:9px;width:68px;height:38px;font-size:10px}
+  .hotspot-minus,.hotspot-plus{bottom:17px;width:29px;height:29px;font-size:20px}
+  .controls{gap:9px;font-size:13px}
+  .controls input{width:68px;padding:8px}
+  .message{margin:12px 2px;padding:12px;font-size:13px}
+  .note{font-size:10px}
+  .big-win-card{padding:12px}
+  .big-win-card strong{font-size:30px}
+
+  .vampire-slot-container {
+    border-radius: 12px;
+  }
+  .vampire-cabinet-header {
+    padding: 8px 12px;
+  }
+  .vampire-cabinet-logo {
+    height: 32px;
+  }
+  .vampire-demo-badge {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+  .vampire-reels-container {
+    gap: 4px;
+    padding: 6px;
+  }
+  .vampire-cell {
+    border-radius: 4px;
+  }
+  .vampire-symbol-label {
+    display: none;
+  }
+  .vampire-control-panel {
+    gap: 4px;
+  }
+  .vampire-hotspot-spin {
+    width: 76px;
+    height: 42px;
+    font-size: 11px;
+  }
+  .vampire-hotspot-minus,
+  .vampire-hotspot-plus {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
+
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
