@@ -240,25 +240,29 @@ export const VampireSlot: React.FC<VampireSlotProps> = ({
             const isReelStopped = stoppedReels[col];
             const colSymbols = grid[col] || [];
 
+            const fallbackSymbols = VAMPIRE_SKIN.symbols.slice(0, 3);
+            const visibleSymbols = colSymbols.length ? colSymbols : fallbackSymbols;
+            const stripSymbols = Array.from({ length: 5 }, () => visibleSymbols).flat();
+
             return (
               <div
                 key={col}
                 className={`vampire-reel-column ${!isReelStopped ? 'vampire-reel-spinning' : ''}`}
                 style={{ animationDelay: `${col * 0.08}s` }}
               >
-                {Array.from({ length: 3 }).map((_, row) => {
-                  const sym = colSymbols[row];
-                  const isWinningPos =
-                    lastResult?.winningLines.some((wl) =>
-                      wl.positions.some((p) => p.col === col && p.row === row)
-                    ) ?? false;
+                <div className="vampire-reel-track">
+                  {stripSymbols.map((sym, index) => {
+                    const row = index % 3;
+                    const isWinningPos = isReelStopped &&
+                      (lastResult?.winningLines.some((wl) =>
+                        wl.positions.some((p) => p.col === col && p.row === row)
+                      ) ?? false);
 
-                  return (
-                    <div
-                      key={row}
-                      className={`vampire-cell ${isWinningPos ? 'vampire-cell-win' : ''}`}
-                    >
-                      {sym ? (
+                    return (
+                      <div
+                        key={`${col}-${index}`}
+                        className={`vampire-cell ${isWinningPos ? 'vampire-cell-win' : ''}`}
+                      >
                         <div className="vampire-symbol-wrapper">
                           <img
                             src={`${ASSET_BASE}/symbols/${SYMBOL_IMAGE_MAP[sym.id] || 'vampire-wild.png'}`}
@@ -267,12 +271,10 @@ export const VampireSlot: React.FC<VampireSlotProps> = ({
                           />
                           <span className="vampire-symbol-label">{sym.label}</span>
                         </div>
-                      ) : (
-                        <div className="vampire-symbol-placeholder">🦇</div>
-                      )}
-                    </div>
-                  );
-                })}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
